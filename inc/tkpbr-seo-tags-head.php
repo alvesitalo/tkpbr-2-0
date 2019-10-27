@@ -12,7 +12,10 @@ function tkpbr_seo_tags() {
   <meta property="og:title" content="<?php bloginfo("name"); ?>" />
   <meta property="og:description" content="<?php bloginfo('description') ?>" />
   <meta property="og:url" content="<?php echo $current_url; ?>" />
-  <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ) ?>/images/header-1.jpg" />
+  <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ) ?>/screenshot.jpg" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:type" content="website" />
   <?php
   }

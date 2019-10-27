@@ -26,42 +26,42 @@
 
 /* Raleway */
 @font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Raleway'), local('Raleway-Regular'), url(https://themes.googleusercontent.com/static/fonts/raleway/v6/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Raleway'), local('Raleway-Regular'), url(https://themes.googleusercontent.com/static/fonts/raleway/v6/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
 }
 @font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://themes.googleusercontent.com/static/fonts/raleway/v6/JbtMzqLaYbbbCL9X6EvaI73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Raleway Bold'), local('Raleway-Bold'), url(https://themes.googleusercontent.com/static/fonts/raleway/v6/JbtMzqLaYbbbCL9X6EvaI73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
 }
 
 /* Lulo Clean One */
 @font-face {
 	font-family: 'Lulo Clean One';
 	font-weight: normal;
-  src: url(../fonts/theme/LuloCleanOne.eot);
-  src: url(../fonts/theme/LuloCleanOne.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/theme/LuloCleanOne.woff) format('woff'),
-	     url(../fonts/theme/LuloCleanOne.ttf) format('truetype');
+	src: url(../fonts/theme/LuloCleanOne.eot);
+	src: url(../fonts/theme/LuloCleanOne.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/theme/LuloCleanOne.woff) format('woff'),
+		 url(../fonts/theme/LuloCleanOne.ttf) format('truetype');
 }
 @font-face {
 	font-family: 'Lulo Clean One';
 	font-weight: bold;
-  src: url(../fonts/theme/LuloCleanOne-Bold.eot);
-  src: url(../fonts/theme/LuloCleanOne-Bold.eot?#iefix) format('embedded-opentype'),
-	     url(../fonts/theme/LuloCleanOne-Bold.woff) format('woff'),
-	     url(../fonts/theme/LuloCleanOne-Bold.ttf) format('truetype');
+	src: url(../fonts/theme/LuloCleanOne-Bold.eot);
+	src: url(../fonts/theme/LuloCleanOne-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/theme/LuloCleanOne-Bold.woff) format('woff'),
+		 url(../fonts/theme/LuloCleanOne-Bold.ttf) format('truetype');
 }
 
-/* DS-Digital */
+/* Jelytta */
 @font-face {
-	font-family: 'DS-Digital';
-	font-weight: bold;
-  src: url(../fonts/theme/DS-Digital-Bold.eot);
-  src: url(../fonts/theme/DS-Digital-Bold.eot?#iefix) format('embedded-opentype'),
-	     url(../fonts/theme/DS-Digital-Bold.woff) format('woff'),
-	     url(../fonts/theme/DS-DIGIB.TTF) format('truetype');
+	font-family: 'Jelytta';
+	font-weight: normal;
+	src: url(../fonts/theme/JelyttaRegular.eot);
+	src: url(../fonts/theme/JelyttaRegular.eot?#iefix) format('embedded-opentype'),
+		 url(../fonts/theme/JelyttaRegular.woff) format('woff'),
+		 url(../fonts/theme/Jelytta.TTF) format('truetype');
 }
