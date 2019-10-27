@@ -10,12 +10,12 @@
   <?php echo tkpbr_seo_tags(); ?> 
   
   <!--[if lt IE 9]>
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.min.js"></script>
-	<![endif]-->
+  <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.min.js"></script>
+  <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/favicon.ico?v=2.1" type="image/x-icon" />
+  <![endif]-->
   
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-  <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/favicon.ico" type="image/x-icon" />
-  <?php wp_head(); ?>
+  <?php wp_head(); ?> 
 </head>
 
 <body <?php body_class(); ?>>
@@ -77,7 +77,7 @@
             <li data-target="#slide" data-slide-to="2" class=""></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="item banner active" style="background: url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/header-1.jpg) no-repeat scroll center top; background-size: cover;"></div>
+            <div class="item banner active" style="background: url(<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/header-1.png) no-repeat scroll center top; background-size: cover;"></div>
           </div>
         </div>
       </div>

@@ -1,29 +1,29 @@
 jQuery(function($) {
-  $( '.load-more' ).click(function() {
+  $('.load-more').click(function() {
 
-    var container = $( '.pagination' ),
-      button = $(this),
-      data = {
-        'action': 'loadmore',
-        'query': posts_query_ajax,
-        'page': current_page_ajax
-      };
+    var container = $('.pagination'),
+    button = $(this),
+    data = {
+      'action': 'loadmore',
+      'query': posts_query_ajax,
+      'page': current_page_ajax
+    };
 
     $.ajax({
       url: '/wp-admin/admin-ajax.php', // AJAX handler
       data: data,
       type: 'POST',
-      beforeSend: function( xhr ) {
-        button.html( '<i class="fa fa-eye fa-spin"></i> Carregando...' );
+      beforeSend: function(xhr) {
+        button.html('<i class="fa fa-motorcycle fa-spin"></i> Carregando...');
       },
-      success: function( data ) {
-        if ( data ) {
-          button.text( 'Mostrar +' );
-          container.before( data ); // insert new posts
+      success: function(data) {
+        if (data) {
+          button.text('Mostrar +');
+          container.before(data); // insert new posts
           current_page_ajax++;
-          $( '.loaded-post-page-' + current_page_ajax ).hide().fadeIn( 1200 );
+          $('.loaded-post-page-' + current_page_ajax).hide().fadeIn(1200);
           
-          if ( current_page_ajax == max_pages_ajax )
+          if (current_page_ajax == max_pages_ajax)
             container.remove(); // if last page, remove all the button
           
         } else {

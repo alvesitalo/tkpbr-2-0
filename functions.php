@@ -13,7 +13,7 @@
 if ( ! isset( $content_width ) ) $content_width = 1170;
 
 function tkpbr_theme_color() {
-  $color = '#88bbd6';
+  $color = '#efa588';
   return $color;
 }
 
@@ -71,20 +71,20 @@ function tkpbr_scripts() {
   
   wp_deregister_script( 'jquery' );
   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1' );
-  wp_enqueue_script( 'tkpbr-main', get_template_directory_uri() . '/js/main.js', array(), '2.0' );
+  wp_enqueue_script( 'tkpbr-main', get_template_directory_uri() . '/js/main.js', array(), '2.1' );
   wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.7', true );
   
   if ( is_home() ) {
     wp_enqueue_style( 'owlcarousel', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), '2.3.4' );
     wp_enqueue_script( 'owlcarousel', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.3.4', true );
-    wp_enqueue_script( 'tkpbr-ajax-posts', get_stylesheet_directory_uri() . '/js/loadmore.ajax.js', array('jquery'), '2.0', true );
+    wp_enqueue_script( 'tkpbr-ajax-posts', get_stylesheet_directory_uri() . '/js/loadmore.ajax.js', array('jquery'), '2.0.3', true );
   }
   if ( is_page() ) {
     wp_enqueue_script( 'jquery-lazy', get_template_directory_uri() . '/js/jquery.lazy.min.js', array('jquery'), '1.7.9', true );
   }
   
-  wp_enqueue_style( 'tkpbr-fonts', get_template_directory_uri() . '/css/fonts.css', array(), '2.0' );
-	wp_enqueue_style( 'tkpbr-style', get_stylesheet_uri(), array(), '2.0.3' );
+  wp_enqueue_style( 'tkpbr-fonts', get_template_directory_uri() . '/css/fonts.css', array(), '2.1.0' );
+	wp_enqueue_style( 'tkpbr-style', get_stylesheet_uri(), array(), '2.1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'tkpbr_scripts' );
 
@@ -165,6 +165,18 @@ function tkpbr_filter_title_sep( $sep ) {
   return $sep;
 }
 add_filter( 'document_title_separator', 'tkpbr_filter_title_sep' );
+
+/**
+ * TKPBR change capabilities to editors
+ */
+function tkpbr_change_editors_capabilities( $caps ) {
+	if( !empty( $caps['edit_pages'] ) ) {
+		$caps['edit_theme_options'] = true;
+	}
+	
+	return $caps;
+}
+add_filter( 'user_has_cap', 'tkpbr_change_editors_capabilities' );
 
 /**
  * TKPBR SEO Meta Tags
