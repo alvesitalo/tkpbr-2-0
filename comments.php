@@ -1,10 +1,11 @@
 <script type="text/javascript">
           $(function() {
             $.ajax({
-              url: 'https://graph.facebook.com/<?php the_permalink(); ?>',
+              url: 'https://graph.facebook.com?id=<?php the_permalink(); ?>&fields=og_object{engagement}',
+              timeout: 5000,
               dataType: 'jsonp',
               success: function( data ) {
-                $( '.comments-count' ).text( '(' + data.share.comment_count + ')' );
+                $( '.comments-count' ).text( '(' + data.og_object.engagement.count + ')' );
               }
             });
           });
