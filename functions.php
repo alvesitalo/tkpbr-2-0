@@ -170,7 +170,7 @@ add_filter( 'document_title_separator', 'tkpbr_filter_title_sep' );
  * TKPBR change capabilities to editors
  */
 function tkpbr_change_editors_capabilities( $caps ) {
-	if( !empty( $caps['edit_pages'] ) ) {
+	if ( !empty( $caps['edit_pages'] ) ) {
 		$caps['edit_theme_options'] = true;
 	}
 	
@@ -183,11 +183,14 @@ add_filter( 'user_has_cap', 'tkpbr_change_editors_capabilities' );
  */
 function post_tags( $id ) {
   $tags = get_the_tags( $id );
+
   if ( $tags ) {
     $post_tags = array();
+
     foreach( $tags as $tag ) {
       $post_tags[] = $tag->name;
     }
+
     echo join ( ', ', $post_tags );
   }
 }
@@ -200,9 +203,8 @@ function is_ajax() {
   if ( defined('DOING_AJAX') && DOING_AJAX ) { // earlier than 4.7.0
     return true;
   }
-  else {
-    return false;
-  }
+
+  return false;
 }
 
 /**
@@ -246,12 +248,11 @@ function get_page_name() {
   if ( $parent_slug == 'katyperry' ) {
     return 'KATY PERRY';
   }
-  if ( $parent_slug == 'site' ) {
+  else if ( $parent_slug == 'site' ) {
     return 'SITE';
   }
-  else {
-    return 'PAGINA';
-  }
+  
+  return 'PAGINA';
 }
 
 function get_excerpt() {
@@ -288,25 +289,26 @@ function tkpbr_set_post_views( $postID ) {
 }
 
 /**
- * Filter Contact Form's fields classes with Jetpack
+ * Filter and Minifies Jetpack Contact Form fields
  */
-function filter_form_field_class( $fields_html, $field_label, $post_id  ) { 
+function filter_form_field_class( $fields_html, $field_label, $post_id  ) {
+  $html = trim( preg_replace( '/\s+/', ' ', $fields_html ) );
+
   $fields = array(
-    "/(<input type='(text|email|url)'.*? class='.*?)('.*?>)/",
-    "/(<(textarea|select).*? class='.*?)('.*?>)/",
-    "/(<input type='(checkbox|radio)'.*? class='.*?)('.*?>)/"
+    "/(<div class='grunion-field-wrap.*?)('.*?>)/",
+    "/(<input type='(text|email|url)'.*?class='.*?)('.*?>)/",
+    "/(<(textarea|select).*?class='.*?)('.*?>)/",
+    "/(<input type='(checkbox|radio)'.*?class='.*?)('.*?>)/"
   );
   
   $fields_classes = array(
-    '$1 form-control $3', //date and default inputs
-    '$1 form-control $3', //textarea and select
-    '$1 form-check-input $3', //checkbox and radios
+    '$1 form-group $2', // field group
+    '$1 form-control $3', // date and default inputs
+    '$1 form-control $3', // textarea and select
+    '$1 form-check-input $3', // checkbox and radios
   );
   
-  $html = "<div class='form-group'>";
-  $html .= preg_replace( $fields, $fields_classes, $fields_html );
-  $html .= "</div>\n";
-  
+  $html = preg_replace( $fields, $fields_classes, $html );
   return $html;
 }
 add_filter( 'grunion_contact_form_field_html', 'filter_form_field_class', 10, 3 );
