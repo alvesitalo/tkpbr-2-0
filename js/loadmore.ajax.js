@@ -14,11 +14,14 @@ jQuery(function($) {
       data: data,
       type: 'POST',
       beforeSend: function(xhr) {
+        button.addClass("loading");
         button.html('<i class="fa fa-motorcycle fa-spin"></i> Carregando...');
       },
       success: function(data) {
         if (data) {
+          button.removeClass("loading");
           button.text('Mostrar +');
+          
           container.before(data); // insert new posts
           current_page_ajax++;
           $('.loaded-post-page-' + current_page_ajax).hide().fadeIn(1200);

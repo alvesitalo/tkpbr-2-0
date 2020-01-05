@@ -589,18 +589,17 @@ article.post-mini:hover .overlay {
   padding: 10px 10px;
   text-align: center;
   text-transform: lowercase;
-
-}
-.pagination a.prev, .pagination a.next {
-  color: #fff;
 }
 .pagination .load-more {
   color: #fff;
   cursor: pointer;
-  cursor: hand;
 }
 .pagination .load-more:hover {
   color: #616161;
+}
+.pagination .load-more.loading {
+  color: #fff;
+  cursor: auto;
 }
 .pagination .page-numbers i {
   font-size: 1.2em;
