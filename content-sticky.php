@@ -36,7 +36,7 @@
                     <a rel="popup" href="https://twitter.com/intent/tweet?url=<?php echo urlencode( get_permalink() ) ?>&amp;text=<?php echo rawurlencode( get_the_title() ); ?>&amp;via=teamkpbrasil" data-rel="popup" target="_blank">
                       <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="whatsapp://send?text=<?php echo rawurlencode( get_the_title() ); ?>%20<?php echo urlencode( get_permalink() ) ?>">
+                    <a rel="popup" href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( get_the_title() ); ?>%20<?php echo urlencode( get_permalink() ) ?>">
                       <i class="fa fa-whatsapp"></i>
                     </a>
                     <a rel="popup" href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ) ?>">
