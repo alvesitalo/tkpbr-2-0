@@ -24,21 +24,25 @@ class tkpbr_post_views extends WP_Widget {
     echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
     
     global $post;
-    $count = 1;
+    $post_peak = 1;
     $popularposts = get_posts( array( 'posts_per_page' => $num_posts, 'meta_key' => 'post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) );
-    ?> 
-                <ul class="posts-peak">
-    <?php
-    foreach( $popularposts as $post ) : setup_postdata( $post );
-      $post_peak = $count++;
-    ?>
-              <li class="ellipsis"><a href="<?php the_permalink(); ?>" aria-label="<?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?> views (<?php the_author(); ?>)"><?php echo $post_peak; ?>. <?php the_title(); ?></a></li>
-    <?php
+?> 
+            <ul class="posts-peak">
+<?php
+    foreach ( $popularposts as $post ) : setup_postdata( $post );
+?>
+              <li class="ellipsis">
+                <a href="<?php the_permalink(); ?>" aria-label="<?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?> views (<?php the_author(); ?>)" title="<?php the_title(); ?>">
+                  <?php echo $post_peak; ?>. <?php the_title(); ?> 
+                </a>
+              </li>
+<?php
+      $post_peak++;
     endforeach;
-    wp_reset_postdata();
-    ?>
+?>
             </ul>
-          <?php
+<?php
+    wp_reset_postdata();
     echo $args['after_widget'];
   }  
   // Widget Backend
@@ -46,7 +50,7 @@ class tkpbr_post_views extends WP_Widget {
     // Widget admin form
     $title = ! empty( $instance['title'] ) ? $instance['title'] : 'Mais Lidas';
     $num_posts = ! empty( $instance['num_posts'] ) ? $instance['num_posts'] : 5;
-    ?>
+?>
     <p>
     <label for="<?php echo $this->get_field_id( 'title' ); ?>">Titulo:</label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
@@ -55,7 +59,7 @@ class tkpbr_post_views extends WP_Widget {
     <label for="<?php echo $this->get_field_id( 'num_posts' ); ?>">Numero de posts:</label>
     <input class="widefat" id="<?php echo $this->get_field_id( 'num_posts' ); ?>" name="<?php echo $this->get_field_name( 'num_posts' ); ?>" type="number" value="<?php echo esc_attr( $num_posts ); ?>" />
     </p>
-    <?php
+<?php
   }
   // Updating widget replacing old instances with new
   public function update( $new_instance, $old_instance ) {
@@ -68,7 +72,7 @@ class tkpbr_post_views extends WP_Widget {
 
 // Register and load the widget
 function load_postviews_widget() {
-    register_widget( 'tkpbr_post_views' );
+  register_widget( 'tkpbr_post_views' );
 }
 add_action( 'widgets_init', 'load_postviews_widget' );
 ?>
