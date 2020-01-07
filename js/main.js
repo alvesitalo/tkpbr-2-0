@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
   }
   
-  if ($('body').hasClass('page-template')) {
+  if ($('body').hasClass('page')) {
     $('.lazy').lazy({
       effect: "fadeIn",
       effectTime: 2000,

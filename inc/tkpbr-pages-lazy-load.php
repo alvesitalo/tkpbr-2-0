@@ -23,7 +23,7 @@ function filter_lazy_load_callback( $parts ) {
 }
 
 function filter_img_lazy_load( $content ) {
-  if ( ! is_page() || is_page( 'especiais' ) ) {
+  if ( ! is_page() || is_attachment() || is_page( 'especiais' ) ) {
     return $content;
   }
   return preg_replace_callback( '/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'filter_lazy_load_callback', $content );
