@@ -57,7 +57,7 @@
             <a href="<?php echo esc_url( tkpbr_social_links( 'ig' ) ); ?>"><i class="fa fa-instagram"></i></a>
           </div>
           <p>&copy; <?php echo date("Y"); ?> <strong>Team Katy Perry Brasil</strong></p>
-          <p>Tema por <a href="https://github.com/italooko" target="_blank">&#205;talo Alves</a> e <a href="<?php echo esc_url( 'https://twitter.com/0hmyperry' ); ?>" target="_blank">Luana Pereira</a></p>
+          <p>Tema por <a href="https://github.com/alvesitalo" target="_blank">&#205;talo Alves</a> e <a href="<?php echo esc_url( 'https://www.behance.net/luana_pereira' ); ?>" target="_blank">Luana Pereira</a></p>
           <p>Hospedado por <a href="<?php echo esc_url( 'https://flaunt.nu' ); ?>" target="_blank">Flaunt</a></p>
         </div>
       </div>

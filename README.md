@@ -29,7 +29,7 @@ Co-Authors Plus Plugin (https://wordpress.org/plugins/co-authors-plus/)
 4. Configure the theme.  
 
 ## Copyright
-Designed and developed with :heart: by [Ítalo Alves](https://github.com/italooko "Ítalo Alves") and [Luana Pereira](https://www.behance.net/luana_pereira "Luana Pereira").  
+Designed and developed with :heart: by [Ítalo Alves](https://github.com/alvesitalo "Ítalo Alves") and [Luana Pereira](https://www.behance.net/luana_pereira "Luana Pereira").  
 Feel free to send a feedback or modify and use this theme **only for personal purposes**.  
 
 ## License
