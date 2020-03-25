@@ -208,10 +208,10 @@ function is_ajax() {
 }
 
 /**
- * Search posts per page by Arnav Joy
+ * Modify search and archives posts per page
  */
 function modify_posts_per_page( $query ) {
-  if ( $query->is_search() ) {
+  if ( $query->is_search() || $query->is_archive() ) {
     $query->set( 'posts_per_page', '12' );
   }
 }
