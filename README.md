@@ -15,12 +15,9 @@ Co-Authors Plus Plugin (https://wordpress.org/plugins/co-authors-plus/)
 ## Dependencies
 - [Bootstrap](https://getbootstrap.com "Bootstrap")  
 - [FontAwesome](https://fontawesome.com/ "FontAwesome")  
-- [Html5shiv](https://code.google.com/p/html5shiv/ "Html5shiv")  
 - [jQuery](https://jquery.com/ "jQuery")  
 - [jQuery Lazy](http://jquery.eisbehr.de/lazy/ "jQuery Lazy")  
-- [Katy Perry's](https://www.katyperry.com/ "Katy Perry site") pictures  
-- [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/ "Owl Carousel")  
-- [WP Bootstrap Navwalker](https://wp-bootstrap.github.io/wp-bootstrap-navwalker/ "WP Bootstrap Navwalker")
+- [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/ "Owl Carousel")
 
 ## Installation
 1. Upload the "tkpbr-2-0" folder to the "/wp-content/themes/" directory or in Appearance > Themes > Install theme.  
@@ -30,6 +27,7 @@ Co-Authors Plus Plugin (https://wordpress.org/plugins/co-authors-plus/)
 
 ## Copyright
 Designed and developed with :heart: by [Ítalo Alves](https://github.com/alvesitalo "Ítalo Alves") and [Luana Pereira](https://www.behance.net/luana_pereira "Luana Pereira").  
+[Katy Perry's](https://www.katyperry.com/ "Katy Perry site") public pictures.  
 Feel free to send a feedback or modify and use this theme **only for personal purposes**.  
 
 ## License
