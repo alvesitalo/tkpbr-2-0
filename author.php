@@ -84,7 +84,7 @@ function get_author_position( $peak ) {
         </div>
       </div>
       <!-- /author -->
-<?php get_template_part( 'content', 'loop-search' ); ?> 
+<?php get_template_part( 'content', 'loop-searchform' ); ?> 
       <!-- conteudo-->
       <div class="row margintop">
         <div class="content col-xs-12 marginbottom">

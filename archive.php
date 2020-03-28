@@ -12,7 +12,7 @@ get_header(); ?>
   <section>
     <div class="container">
 <?php get_template_part( 'content', 'ad-above' ); ?> 
-<?php get_template_part( 'content', 'loop-search' ); ?> 
+<?php get_template_part( 'content', 'loop-searchform' ); ?> 
       <!-- conteudo-->
       <div class="row margintop">
         <div class="content col-xs-12 marginbottom">

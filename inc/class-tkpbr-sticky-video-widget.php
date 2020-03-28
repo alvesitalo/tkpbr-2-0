@@ -17,10 +17,7 @@ class tkpbr_sticky_video extends WP_Widget {
   // Creating widget front-end
   public function widget( $args, $instance ) {
     $title = isset( $instance['title'] ) ? $instance['title'] : 'Video';
-    $video_url = isset( $instance['video_url'] ) ? $instance['video_url'] : 'https://www.youtube.com/watch?v=CevxZvSJLk8';
-    
-    preg_match( "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $video_url, $matches );
-    $video_id = $matches[1];
+    $video_id = isset( $instance['video_url'] ) ? $instance['video_url'] : 'CevxZvSJLk8';
     
     // The widget content
     echo $args['before_widget'];    
@@ -36,7 +33,8 @@ class tkpbr_sticky_video extends WP_Widget {
   public function form( $instance ) {
     // Widget admin form
     $title = ! empty( $instance['title'] ) ? $instance['title'] : 'Video';
-    $video_url = ! empty( $instance['video_url'] ) ? $instance['video_url'] : '';
+    $video_url = 'https://www.youtube.com/watch?v=';
+    $video_url .= ! empty( $instance['video_url'] ) ? $instance['video_url'] : '';
     ?>
     <p>
     <label for="<?php echo $this->get_field_id( 'title' ); ?>">Titulo:</label>
@@ -50,6 +48,9 @@ class tkpbr_sticky_video extends WP_Widget {
   }
   // Updating widget replacing old instances with new
   public function update( $new_instance, $old_instance ) {
+    preg_match( "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $new_instance['video_url'], $matches );
+    $new_instance['video_url'] = $matches[1];
+
     $instance = array();
     $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
     $instance['video_url'] = ( ! empty( $new_instance['video_url'] ) ) ? sanitize_text_field( $new_instance['video_url'] ) : '';
@@ -59,7 +60,7 @@ class tkpbr_sticky_video extends WP_Widget {
 
 // Register and load the widget
 function load_tkpbrvideo_widget() {
-    register_widget( 'tkpbr_sticky_video' );
+  register_widget( 'tkpbr_sticky_video' );
 }
 add_action( 'widgets_init', 'load_tkpbrvideo_widget' );
 ?>

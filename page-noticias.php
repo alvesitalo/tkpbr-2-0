@@ -22,7 +22,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     )
   );
 ?>
-<?php get_template_part( 'content', 'loop-search' ); ?> 
+<?php get_template_part( 'content', 'loop-searchform' ); ?> 
       <!-- conteudo-->
       <div class="row margintop">
         <div class="content col-xs-12 marginbottom">

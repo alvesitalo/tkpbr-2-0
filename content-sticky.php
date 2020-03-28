@@ -39,9 +39,6 @@
                     <a rel="popup" href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( get_the_title() ); ?>%20<?php echo urlencode( get_permalink() ) ?>">
                       <i class="fa fa-whatsapp"></i>
                     </a>
-                    <a rel="popup" href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink() ) ?>">
-                      <i class="fa fa-google-plus"></i>
-                    </a>
                   </div>
                 </div>
               </article>

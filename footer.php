@@ -13,7 +13,7 @@
             )
           );
           else :
-          get_template_part( 'inc/tkpbr-footer-menu', 'callback' );
+          get_template_part( 'content', 'footer-menu-none' );
           ?>
 <?php endif; ?> 
         </div>
@@ -29,7 +29,7 @@
             )
           );
           else :
-          get_template_part( 'inc/tkpbr-footer-menu', 'callback' );
+          get_template_part( 'content', 'footer-menu-none' );
           ?>
 <?php endif; ?> 
         </div>
@@ -45,7 +45,7 @@
             )
           );
           else :
-          get_template_part( 'inc/tkpbr-footer-menu', 'callback' );
+          get_template_part( 'content', 'footer-menu-none' );
           ?>
 <?php endif; ?> 
         </div>
