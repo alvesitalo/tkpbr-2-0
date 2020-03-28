@@ -1,11 +1,11 @@
 # TKPBR 2.0
 
-![](https://img.shields.io/github/issues/italooko/tkpbr-2-0) ![](https://img.shields.io/github/release/italooko/tkpbr-2-0) ![](https://img.shields.io/github/tag/italooko/tkpbr-2-0) ![](https://img.shields.io/github/license/italooko/tkpbr-2-0)  
+![](https://img.shields.io/github/issues/alvesitalo/tkpbr-2-0) ![](https://img.shields.io/github/release/alvesitalo/tkpbr-2-0) ![](https://img.shields.io/github/tag/alvesitalo/tkpbr-2-0) ![](https://img.shields.io/github/license/alvesitalo/tkpbr-2-0)  
 
-TKPBR 2.0 is a WordPress responsive theme with theme options, widgets, sidebars and more.  
+TKPBR 2.0 is a WordPress responsive theme with options, widgets, sidebars and more.  
 Used by Team Katy Perry Brasil's fansite.  
 
-![](https://raw.githubusercontent.com/italooko/tkpbr-2-0/master/screenshot.jpg)  
+![](https://raw.githubusercontent.com/alvesitalo/tkpbr-2-0/master/screenshot.jpg)  
 
 ## Requeriments
 WordPress +4.4.0 (https://wordpress.org/download/)  

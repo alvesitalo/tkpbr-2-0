@@ -8,9 +8,9 @@
   );
 ?>
       <!-- sticky posts carousel -->
+<?php if ( $sticky->have_posts() ) : ?>
       <div class="row n-margintop container30">
         <div class="col-xs-12">
-<?php if ( have_posts() ) : ?>
           <div id="sticky-posts" class="owl-carousel">
             <!-- I think we're running on a loooop -->
 <?php while ( $sticky->have_posts() ) : $sticky->the_post(); ?>
@@ -36,7 +36,7 @@
                     <a rel="popup" href="https://twitter.com/intent/tweet?url=<?php echo urlencode( get_permalink() ) ?>&amp;text=<?php echo rawurlencode( get_the_title() ); ?>&amp;via=teamkpbrasil" data-rel="popup" target="_blank">
                       <i class="fa fa-twitter"></i>
                     </a>
-                    <a rel="popup" href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( get_the_title() ); ?>%20<?php echo urlencode( get_permalink() ) ?>">
+                    <a rel="popup" href="https://api.whatsapp.com/send?text=<?php echo rawurlencode( get_the_title() ); ?>%20<?php echo urlencode( get_permalink() ) ?>" target="_blank">
                       <i class="fa fa-whatsapp"></i>
                     </a>
                   </div>
@@ -46,7 +46,7 @@
 <?php endwhile; wp_reset_postdata(); ?>
             <!-- Deja Vu -->
           </div>
-<?php endif; ?>
         </div>
       </div>
+<?php endif; ?>
       <!-- /sticky posts carousel -->

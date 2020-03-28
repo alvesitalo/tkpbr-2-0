@@ -9,22 +9,31 @@
 
 get_header(); ?> 
 <?php
-$curauthor = ( get_query_var('author_name') ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) );
-$author = $curauthor->display_name;
+$author = ( get_query_var('author_name') ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) );
 
-$popularposts = get_posts( array('posts_per_page' => 100, 'meta_key' => 'post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC') );
-$count = 1;
-$top100 = array();
+$popularposts = get_posts( 
+  array(
+    'posts_per_page' => 100,
+    'meta_key' => 'post_views_count',
+    'orderby' => 'meta_value_num',
+    'order' => 'DESC'
+  )
+);
+
+$author_peak = 1;
+$author_in = 0;
 
 foreach ( $popularposts as $popularpost ) {
-  $position = $count++;
-  $top100[$position] = get_the_author_meta( 'display_name', $popularpost->post_author );  
+  if ( $author->ID == $popularpost->post_author ) {
+    $author_in = 1;
+    break;
+  }
+
+  $author_peak++;
 }
 
-$author_peak = array_search( $author, $top100 );
-
-function get_author_position( $peak ) {
-  if ( $peak == FALSE ) {
+function get_author_position( $peak, $hot ) {
+  if ( $hot == 0 ) {
     return "OUT HOT 100";
   } elseif ( $peak == 1 ) {
     return "#1 ON HOT 100";
@@ -63,14 +72,14 @@ function get_author_position( $peak ) {
         <div class="content author-page col-xs-12">
           <div class="author vcard row nomargin">
             <div class="col-xs-12 col-sm-3 col-lg-2">
-              <?php echo get_avatar( $curauthor->ID, 150, '', 'Avatar de '. $author ); ?> 
+              <?php echo get_avatar( $author->ID, 150, '', 'Avatar de '. $author->display_name ); ?> 
             </div>
             <div class="author-info col-xs-12 col-sm-9 col-lg-10">
-              <h2 class="fn"><?php echo $author; ?></h2>
+              <h2 class="fn"><?php echo $author->display_name ?></h2>
               <h3>
                 <?php
-                if ( !empty( $curauthor->description ) ) {
-                  $description = explode( "<br />", nl2br( $curauthor->description ) );
+                if ( !empty( $author->description ) ) {
+                  $description = explode( "<br />", nl2br( $author->description ) );
                   echo $description[0] ."<br />". $description[1] .", ". $description[2];
                 }
                 else {
@@ -78,7 +87,10 @@ function get_author_position( $peak ) {
                 }
                 ?> 
               </h3>
-              <h3><i class="fa fa-newspaper-o"></i><?php printf( '%s publicações - %s', count_user_posts( $curauthor->ID ), get_author_position( $author_peak ) ); ?></h3>
+              <h3>
+                <i class="fa fa-newspaper-o"></i>
+                <?php printf( '%s publicações - %s', count_user_posts( $author->ID ), get_author_position( $author_peak, $author_in ) ); ?> 
+              </h3>
             </div>
           </div>
         </div>
@@ -88,7 +100,7 @@ function get_author_position( $peak ) {
       <!-- conteudo-->
       <div class="row margintop">
         <div class="content col-xs-12 marginbottom">
-          <h1 class="intitle"><?php printf( 'Postados por: %s', $curauthor->nickname ); ?></h1>
+          <h1 class="intitle"><?php printf( 'Postados por: %s', $author->nickname ); ?></h1>
 <?php if ( have_posts() ) : ?>
           <div id="loop" class="loop row">
 <?php while ( have_posts() ) : the_post();
