@@ -23,10 +23,10 @@ function filter_lazy_load_callback( $parts ) {
 }
 
 function filter_img_lazy_load( $content ) {
-  if ( ! is_page() || is_attachment() || is_page( 'especiais' ) ) {
+  if ( ! is_page() || is_attachment() ) {
     return $content;
   }
   return preg_replace_callback( '/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', 'filter_lazy_load_callback', $content );
 }
-add_filter( 'the_content', 'filter_img_lazy_load' );
+add_filter( 'the_content', 'filter_img_lazy_load', 11 );
 ?>
