@@ -28,12 +28,12 @@ get_header(); ?>
           <div id="members" class="members loop row">
             <!-- "Editor" Users -->
 <?php foreach( $users as $user) : ?>
-            <div class="person vcard col-xs-12 col-sm-6 col-md-4">
-              <div class="avatar photo" style="background: url(<?php echo get_avatar_url( $user->ID, array( 'size' => 150 ) ); ?>) top center no-repeat;"></div>
-              <p id="name" class="fn text-center">
+            <div class="person vcard col-xs-6 col-sm-6 col-md-4">
+              <div class="avatar photo" style="background: url(<?php echo get_avatar_url( $user->ID, array( 'size' => 140 ) ); ?>) top center no-repeat;"></div>
+              <p id="name" class="fn text-center ellipsis">
                 <strong><?php echo $user->display_name; ?></strong>
               </p>
-              <p id="about" class="info text-center">
+              <p id="about" class="info text-center ellipsis">
                 <?php echo nl2br( get_the_author_meta( 'description', $user->ID ) ); ?> 
               </p>
             </div>

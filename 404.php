@@ -14,6 +14,7 @@
 
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <meta name="theme-color" content="<?php echo tkpbr_theme_color(); ?>">
   <meta name="msapplication-navbutton-color" content="<?php echo tkpbr_theme_color(); ?>">
 
