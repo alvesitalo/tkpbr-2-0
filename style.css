@@ -1,6 +1,6 @@
 /*
 Theme Name:   TKPBR 2.0: Never Really Over
-Version:      2.1.4.5
+Version:      2.1.4.7
 Theme URI:    https://www.teamkatyperry.com.br/
 Description:  Tema responsivo do WordPress para o site de noticias Team Katy Perry Brasil, continuando a versao 2.0, agora com o tema de #NeverReallyOver.
 Author:       Italo Alves, Luana Pereira
@@ -108,6 +108,10 @@ div.alignnone {
 }
 #ie8 img {
   width: auto;
+}
+.blocks-gallery-image figure,
+.blocks-gallery-item figure {
+  flex-direction: column;
 }
 .wp-block-image figcaption {
   font: normal .955em 'Raleway', sans-serif;
