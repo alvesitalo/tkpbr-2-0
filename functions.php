@@ -85,7 +85,7 @@ function tkpbr_scripts() {
 
   wp_enqueue_script( 'tkpbr-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '2.1.3', true );
   wp_enqueue_style( 'tkpbr-fonts', get_template_directory_uri() . '/css/fonts.css', array(), '2.1.1' );
-	wp_enqueue_style( 'tkpbr-style', get_stylesheet_uri(), array(), '2.1.5' );
+	wp_enqueue_style( 'tkpbr-style', get_stylesheet_uri(), array(), '2.1.6' );
 }
 add_action( 'wp_enqueue_scripts', 'tkpbr_scripts' );
 
