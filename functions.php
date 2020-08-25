@@ -68,7 +68,7 @@ add_action( 'after_setup_theme', 'tkpbr_setup' );
 function tkpbr_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7' );
   wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.0.7' );
-  wp_enqueue_script( 'tkpbr-ads', get_template_directory_uri() . '/js/ads.js', array(), '2.1.0' );
+  wp_enqueue_script( 'tkpbr-ads', get_template_directory_uri() . '/js/ads.js', array(), '2.1.1' );
   
   wp_deregister_script( 'jquery' );
   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1', true );

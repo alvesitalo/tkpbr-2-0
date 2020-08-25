@@ -4,13 +4,13 @@
           <div id="img" class="hidden-sm nomargin">
           </div>
           <div id="code" class="nomargin">
-            <!-- /7264022/Flaunt_728x90_Int -->
-            <div id='div-gpt-ad-1441212117357-0' style='height:90px; width:728px;'>
-              <script type='text/javascript'>
+            <!-- 2020 Flaunt Ads -->
+            <div id="728x90"> 
+              <script>
                 googletag.cmd.push(function() {
-                  googletag.display('div-gpt-ad-1441212117357-0');
+                  googletag.display('728x90');
                 });
-              </script>
+              </script> 
             </div>
           </div>
         </div>
